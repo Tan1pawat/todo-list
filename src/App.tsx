@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TodoList from './Components/Todolist';
+import Sidebar from './Components/Share/Sidebar';
+import { ThemeToggle } from './Components/Share/ThemeToggle';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App flex min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
+      <Sidebar />
+      <main className="flex-grow p-4">
+        <div className="flex justify-end mb-4">
+          <ThemeToggle />
+        </div>
+        <TodoList />
+      </main>
     </div>
-  );
+  )
 }
 
 export default App;
